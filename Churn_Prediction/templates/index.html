@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Churn Prediction</title>
+</head>
+<body>
+    <h2>Customer Churn Prediction</h2>
+    <form method="POST" action="/predict">
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <select name="gender">
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select><br><br>
+
+        <!-- Senior Citizen -->
+        <label>Senior Citizen:</label>
+        <select name="SeniorCitizen">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <!-- Partner -->
+        <label>Partner:</label>
+        <select name="Partner">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <!-- Dependents -->
+        <label>Dependents:</label>
+        <select name="Dependents">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <!-- Tenure -->
+        <label>Tenure (in months):</label>
+        <input type="number" name="tenure" required><br><br>
+
+        <!-- Phone Service -->
+        <label>Phone Service:</label>
+        <select name="PhoneService">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <!-- Multiple Lines -->
+        <label>Multiple Lines:</label>
+        <select name="MultipleLines">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <!-- Online Security -->
+        <label>Online Security:</label>
+        <select name="OnlineSecurity">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <!-- Online Backup -->
+        <label>Online Backup:</label>
+        <select name="OnlineBackup">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <!-- Device Protection -->
+        <label>Device Protection:</label>
+        <select name="DeviceProtection">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <!-- Tech Support -->
+        <label>Tech Support:</label>
+        <select name="TechSupport">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <!-- Streaming TV -->
+        <label>Streaming TV:</label>
+        <select name="StreamingTV">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <!-- Streaming Movies -->
+        <label>Streaming Movies:</label>
+        <select name="StreamingMovies">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <!-- Paperless Billing -->
+        <label>Paperless Billing:</label>
+        <select name="PaperlessBilling">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <!-- Monthly Charges -->
+        <label>Monthly Charges:</label>
+        <input type="number" step="0.01" name="MonthlyCharges" required><br><br>
+
+        <!-- Total Charges -->
+        <label>Total Charges:</label>
+        <input type="number" step="0.01" name="TotalCharges" required><br><br>
+
+        <!-- Payment Type -->
+        <label>Payment Method:</label>
+        <select name="PaymentMethod">
+            <option value="Payment_Bank transfer (automatic)">Bank transfer (automatic)</option>
+            <option value="Payment_Credit card (automatic)">Credit card (automatic)</option>
+            <option value="Payment_Electronic check">Electronic check</option>
+            <option value="Payment_Mailed check">Mailed check</option>
+        </select><br><br>
+
+        <!-- Contract Type -->
+        <label>Contract:</label>
+        <select name="ContractType">
+            <option value="Contract_Month-to-month">Month-to-month</option>
+            <option value="Contract_One year">One year</option>
+            <option value="Contract_Two year">Two year</option>
+        </select><br><br>
+
+        <!-- Service Type -->
+        <label>Internet Service:</label>
+        <select name="ServiceType">
+            <option value="Service_DSL">DSL</option>
+            <option value="Service_Fiber optic">Fiber optic</option>
+            <option value="Service_No">No Internet</option>
+        </select><br><br>
+
+        <input type="submit" value="Predict">
+
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
